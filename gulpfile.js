@@ -24,4 +24,8 @@ gulp.task('test', $.shell.task([
   'karma start karma.conf.js --browsers Firefox --single-run'
 ]));
 
+gulp.task('watch', function(){
+  gulp.watch(paths.source, ['build']);
+});
+
 gulp.task('default', ['jshint', 'concat']);
