@@ -1,3 +1,6 @@
+;(function(c3){
+  'use strict';
+
 angular.module('c3-chart', [])
 
   .directive('c3Chart', [function() {
@@ -109,3 +112,4 @@ angular.module('c3-chart', [])
       }
     };
   }]);
+}(c3));
