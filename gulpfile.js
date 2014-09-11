@@ -25,7 +25,7 @@ gulp.task('test', $.shell.task([
 ]));
 
 gulp.task('watch', function(){
-  gulp.watch(paths.source, ['build']);
+  gulp.watch(paths.source, ['default']);
 });
 
 gulp.task('default', ['jshint', 'concat']);
