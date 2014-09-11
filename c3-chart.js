@@ -22,9 +22,6 @@ angular.module('c3-chart', [])
       template: '<div class="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
-        //assign an id to the chart if it doesn't have one
-        console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
-        console.log('element  ', element);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           scope.grid = {
@@ -50,10 +47,8 @@ angular.module('c3-chart', [])
           scope.color = {};
           scope.color.pattern = patterns.dark ;
         }
-
-
         var chartId;
-
+        //if an id is given use that, if not assign it one
         if(element.attr('id')) {
           chartId = element.attr('id');
         }
@@ -62,14 +57,12 @@ angular.module('c3-chart', [])
           element.attr('id', chartId);
           chartIdCounter += 1;
         }
-
         //will be called on click
         scope.data.onclick = function(d, elem) {
           console.log(elem.style.fill, ' elem');
           elem.style.fill = '#ce93d8';
           console.log(d, ' d');
         };
-
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
@@ -115,4 +108,4 @@ angular.module('c3-chart', [])
         var chart = c3.generate(chartData);
       }
     };
-}]);
+  }]);
