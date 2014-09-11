@@ -14,5 +14,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "c3": "~0.3.0",
+    "d3": "~3.4.11"
+  }
 }
