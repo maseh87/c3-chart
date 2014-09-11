@@ -23,7 +23,7 @@ describe('chart', function() {
       test: 'test'
     };
 
-    element = "<ox-chart id='chart' data='data' axis='axis' options='options' pattern='dark'></ox-chart>";
+    element = "<c3-chart id='chart' data='data' axis='axis' options='options' pattern='dark'></c3-chart>";
     //complile the element to gain access to the link function
     element = $compile(element)($scope);
     //digest the scope to register the element
