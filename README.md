@@ -32,7 +32,7 @@ Angular C3    [![Build Status](https://travis-ci.org/Hendrixer/ngFx.svg?branch=m
 + Submit issues as you see them. There are probably better, faster, easier ways to achieve what Angular C3 is designed to do so.
 
 ###Testing
-+ angular c3 uses Karma + Jasmine + Travis for unit and ci
++ angular c3 uses Karma + Mocha + Travis for unit and ci
 + Make sure you didn't break anything
   + run ```karma start``` to test in Chrome with karma
 + Features will not be accepted without specs created for them
