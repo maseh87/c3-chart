@@ -17,4 +17,9 @@ gulp.task('concat', function() {
     .pipe(gulp.dest('dist/'));
 });
 
+//task to tell travis to run karma start and run in phantom.js
+gulp.task('test', $.shell.task([
+  'karma start karma.conf.js --browsers Firefox --single-run'
+]));
+
 gulp.task('default', ['jshint', 'concat']);
