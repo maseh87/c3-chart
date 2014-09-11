@@ -23,7 +23,7 @@ Angular C3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 5. Make test and check test
 6. Build it, run ```gulp``` and the files will be linted, concatenated, and minified
 7. Push to new branch on your forked repo
-8. Pull request from your branch to ngFx master
+8. Pull request from your branch to Angular C3 master
 
 ###Format for pull request
 + Pretty standard
