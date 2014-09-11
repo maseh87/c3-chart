@@ -57,12 +57,12 @@ angular.module('c3-chart', [])
           element.attr('id', chartId);
           chartIdCounter += 1;
         }
-        //will be called on click
-        scope.data.onclick = function(d, elem) {
-          console.log(elem.style.fill, ' elem');
-          elem.style.fill = '#ce93d8';
-          console.log(d, ' d');
-        };
+        //click function not utilized currently
+        // scope.data.onclick = function(d, elem) {
+        //   console.log(elem.style.fill, ' elem');
+        //   elem.style.fill = '#ce93d8';
+        //   console.log(d, ' d');
+        // };
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
