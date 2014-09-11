@@ -9,7 +9,7 @@ Angular C3    [![Build Status](https://travis-ci.org/Hendrixer/ngFx.svg?branch=m
 + D3js
 
 ## Downloading
-1. The best way to install ng-Fx is to use bower
+1. The best way to install Angular C3 is to use bower
     + ```bower install angular-c3 --save```
 2. Or, from this repo
   + you'll need the main file in ```dist/c3-chart.js```
@@ -29,9 +29,7 @@ Angular C3    [![Build Status](https://travis-ci.org/Hendrixer/ngFx.svg?branch=m
 + Pretty standard
   + in your commit message; ```(type) message [issue # closed]```
     + ```(bug) killed that bug, closes #45```
-  + if you're submitting new animations:
-    + ```(new fx) added 3d rotation animation ```
-+ Submit issues as you see them. There are probably better, faster, easier ways to achieve what ngFx is designed to do so.
++ Submit issues as you see them. There are probably better, faster, easier ways to achieve what Angular C3 is designed to do so.
 
 ###Testing
 + angular c3 uses Karma + Jasmine + Travis for unit and ci
