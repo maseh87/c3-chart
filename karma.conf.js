@@ -21,7 +21,7 @@ module.exports = function(config) {
         'src/c3-chart.js',
         'src/lib/angular-mocks/angular-mocks.js',
         'node_modules/expect.js/index.js',
-        'test/**/*.js'
+        'tests/**/*.js'
     ],
 
 
