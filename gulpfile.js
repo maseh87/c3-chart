@@ -15,7 +15,8 @@ gulp.task('jshint', function() {
 gulp.task('concat', function() {
   return gulp.src(paths.scripts)
     .pipe($.concat('c3-chart.js'))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
+    .pipe(notify({message: 'Done Concating'}));
 });
 
 //task to tell travis to run karma start and run in phantom.js
