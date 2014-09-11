@@ -1,4 +1,4 @@
-Angular C3    [![Build Status](https://travis-ci.org/Hendrixer/ngFx.svg?branch=master)](https://travis-ci.org/Hendrixer/ng-Fx)   <img src="http://img.shields.io/badge/Built%20with-Gulp-red.svg" />
+Angular C3    [![Build Status](https://travis-ci.org/maseh87/c3-chart)](https://travis-ci.org/maseh87/c3-chart)   <img src="http://img.shields.io/badge/Built%20with-Gulp-red.svg" />
 ===============
 
 ### A simple way to add custom C3 charts to your angular apps. Charts based off [C3](http://http://c3js.org/).
