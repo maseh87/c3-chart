@@ -1,0 +1,22 @@
+{
+  "name": "c3-chart",
+  "version": "0.0.0",
+  "description": "angular directive to utilize c3 charts",
+  "main": "c3-chart.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maseh87/c3-chart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maseh87/c3-chart/issues"
+  },
+  "homepage": "https://github.com/maseh87/c3-chart"
+}
