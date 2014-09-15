@@ -15353,7 +15353,7 @@
 ;(function(c3){
   'use strict';
 
-angular.module('ngC3', [])
+angular.module('angular-c3', [])
 
   .directive('c3Chart', [function() {
 
