@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular C3</title>
+</head>
+<body ng-app="demo">
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/d3/d3.js"></script>
+  <script src="lib/c3/c3.js"></script>
+  <script src="c3-chart.js"></script>
+
+  <script type="text/javascript">
+    angular.module('demo', [])
+      .controller('DemoController', function($scope) {
+        $scope.test = 'test';
+      });
+
+  </script>
+
+
+  <div ng-controller="DemoController">{{ test }}</div>
+</body>
+</html>
