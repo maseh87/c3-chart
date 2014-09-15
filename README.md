@@ -14,6 +14,24 @@ ngC3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch=maste
 2. Or, from this repo
   + you'll need the main file in ```dist/c3-chart.js```
 
+## Using
++ Adding a C3 chart is as simple as adding the c3-chart directive to your HTML. Also add the data attribute to point to the data inside your controller.
+
+```html
+<c3-chart data="data"></c3-chart>
+```
+
+```javascript
+angular.module('chartApp', ['ngC3'])
+.controller('ChartController', function($scope){
+  $scope.data = {
+    columns : [
+      ['data1', 30, 200, 100, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25]
+    ]
+  };
+});
+```
 
 ##Contributing
 1. Fork it
