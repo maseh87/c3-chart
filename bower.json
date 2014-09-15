@@ -1,7 +1,7 @@
 {
   "name": "c3-chart",
   "main": "c3-chart.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/maseh87/c3-chart",
   "authors": [
     "Mason <maseh87@gmail.com>"
