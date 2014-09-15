@@ -11,11 +11,11 @@
   <script src="c3-chart.js"></script>
 
   <div ng-controller="DemoController">
-    <c3-chart data="data"></c3-chart>
+    <c3-chart data="data" pattern="material"></c3-chart>
   </div>
 
   <script type="text/javascript">
-    angular.module('demo', [])
+    angular.module('demo', ['c3-chart'])
       .controller('DemoController', function($scope) {
         $scope.data = {
           columns: [
