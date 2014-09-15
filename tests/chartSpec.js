@@ -2,7 +2,7 @@ describe('chart', function() {
   //load variables in closure scope to be used throughout tests
   var $scope, element, isolate;
   //load the chart module to gain access to the chart directive
-  beforeEach(module('c3-chart'));
+  beforeEach(module('ngC3'));
   //inject the rootscope and compile function to test the chart directive
   beforeEach(inject(function($rootScope, $compile) {
     $scope = $rootScope.$new();
