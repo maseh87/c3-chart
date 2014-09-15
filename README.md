@@ -1,4 +1,4 @@
-Angular C3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch=master)](https://travis-ci.org/maseh87/c3-chart)   <img src="http://img.shields.io/badge/Built%20with-Gulp-red.svg" />
+ngC3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch=master)](https://travis-ci.org/maseh87/c3-chart)   <img src="http://img.shields.io/badge/Built%20with-Gulp-red.svg" />
 ===============
 
 ### A simple way to add custom C3 charts to your angular apps. Charts based off [C3](http://http://c3js.org/).
@@ -9,8 +9,8 @@ Angular C3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 + D3js
 
 ## Downloading
-1. The best way to install Angular C3 is to use bower
-    + ```bower install angular-c3 --save```
+1. The best way to install ngC3 is to use bower
+    + ```bower install ngC3 --save```
 2. Or, from this repo
   + you'll need the main file in ```dist/c3-chart.js```
 
@@ -23,16 +23,16 @@ Angular C3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 5. Make test and check test
 6. Build it, run ```gulp``` and the files will be linted, concatenated, and minified
 7. Push to new branch on your forked repo
-8. Pull request from your branch to Angular C3 master
+8. Pull request from your branch to ngC3 master
 
 ###Format for pull request
 + Pretty standard
   + in your commit message; ```(type) message [issue # closed]```
     + ```(bug) killed that bug, closes #45```
-+ Submit issues as you see them. There are probably better, faster, easier ways to achieve what Angular C3 is designed to do so.
++ Submit issues as you see them. There are probably better, faster, easier ways to achieve what ngC3 is designed to do so.
 
 ###Testing
-+ angular c3 uses Karma + Mocha + Travis for unit and ci
++ ngc3 uses Karma + Mocha + Travis for unit and ci
 + Make sure you didn't break anything
   + run ```karma start``` to test in Chrome with karma
 + Features will not be accepted without specs created for them

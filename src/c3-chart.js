@@ -1,7 +1,7 @@
 ;(function(c3){
   'use strict';
 
-angular.module('c3-chart', [])
+angular.module('ngC3', [])
 
   .directive('c3Chart', [function() {
 
