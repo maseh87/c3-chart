@@ -1,5 +1,5 @@
 {
-  "name": "c3-chart",
+  "name": "ngC3",
   "version": "0.0.1",
   "description": "angular directive to utilize c3 charts",
   "main": "c3-chart.js",
