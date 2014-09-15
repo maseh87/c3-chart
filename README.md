@@ -32,7 +32,7 @@ ngC3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch=maste
 + Submit issues as you see them. There are probably better, faster, easier ways to achieve what ngC3 is designed to do so.
 
 ###Testing
-+ ngc3 uses Karma + Mocha + Travis for unit and ci
++ ngC3 uses Karma + Mocha + Travis for unit and ci
 + Make sure you didn't break anything
   + run ```karma start``` to test in Chrome with karma
 + Features will not be accepted without specs created for them
