@@ -1,5 +1,5 @@
 {
-  "name": "ng-c3",
+  "name": "angular-c3",
   "main": "c3-chart.js",
   "version": "0.0.1",
   "homepage": "https://github.com/maseh87/c3-chart",
@@ -19,12 +19,11 @@
     "README.md",
     ".gitignore",
     ".bowerrc",
-    ".jshintrc"
+    ".jshintrc",
+    "karma.conf.js",
+    "gulpfile.js"
   ],
   "dependencies": {
-    "angular": "~1.2.23",
-    "c3": "~0.3.0",
-    "d3": "~3.4.11"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.24"
