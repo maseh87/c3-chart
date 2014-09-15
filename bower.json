@@ -13,7 +13,13 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "package.json",
+    "README.md",
+    ".gitignore",
+    ".bowerrc",
+    ".jshintrc"
   ],
   "dependencies": {
     "angular": "~1.2.23",
