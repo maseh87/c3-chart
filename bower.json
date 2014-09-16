@@ -1,7 +1,7 @@
 {
   "name": "angular-c3",
   "main": "c3-chart.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/maseh87/c3-chart",
   "authors": [
     "Mason <maseh87@gmail.com>"
@@ -25,5 +25,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "angular-mocks": "~1.2.24",
+    "d3": "~3.4.11",
+    "c3": "~0.3.0",
+    "angular": "~1.2.24"
   }
 }
