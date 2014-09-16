@@ -54,5 +54,5 @@ angular.module('chartApp', ['angular-c3'])
 + Make sure you didn't break anything
   + run ```karma start``` to test in Chrome with karma
 + Features will not be accepted without specs created for them
-+ Run ```gulp``` and all the source files will be watched and concatenated
++ Run ```gulp watch``` and all the source files will be watched and concatenated
 + Open the ```index.html``` and use the test app as a playground
