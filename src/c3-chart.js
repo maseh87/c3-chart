@@ -26,6 +26,7 @@ angular.module('angular-c3', [])
       replace: true,
       link: function(scope, element, attrs) {
         //available option to show gridlines for chart
+        console.log(element);
         if(attrs.grid === 'true') {
           scope.grid = {
             x: { show: true },

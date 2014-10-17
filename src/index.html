@@ -11,7 +11,7 @@
   <script src="c3-chart.js"></script>
 
   <div ng-controller="DemoController">
-    <c3-chart data="data"></c3-chart>
+    <c3-chart data="data" pattern="material"></c3-chart>
   </div>
 
   <script type="text/javascript">
@@ -19,10 +19,10 @@
       .controller('DemoController', function($scope) {
         $scope.data = {
           columns: [
-            [],
-            [],
-            [],
-            []
+            ['x1', 10, 30, 45, 50, 70, 100],
+            ['x2', 30, 50, 75, 100, 120, 55],
+            ['data1', 30, 200, 100, 400, 150, 450],
+            ['data2', 100, 180, 240, 100, 190, 200]
           ]
         };
       });
