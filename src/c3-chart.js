@@ -2,8 +2,27 @@
   'use strict';
 
 angular.module('ngC3', [])
+  .factory('c3Factory', function() {
+    var chart = {};
+    var allCharts = {};
+    var decorateChart = function(chart) {
+      chart.on = function( what, then) {
+        // chart[what](then);
+      }
+    };
 
-  .directive('c3Chart', [function() {
+    chart.get = function(id) {
+      return allCharts[id];
+    };
+
+    chart.register = function(id, chart) {
+      decorateChart(chart);
+      allCharts[id] = chart;
+    };
+
+    return chart;
+  })
+  .directive('c3Chart', ['c3Factory', function(c3Factory) {
 
     //color patterns for chart coloring
     var patterns = {
@@ -55,7 +74,11 @@ angular.module('ngC3', [])
         // }, onChartChanged);
 
         //Generating the chart
+
         var chart = c3.generate(chartData);
+        c3Factory.register('#chart', chart);
+        console.log(c3Factory.get('#chart'));
+
       }
     };
   }]);
