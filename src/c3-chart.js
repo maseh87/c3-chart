@@ -1,7 +1,7 @@
 ;(function(c3){
   'use strict';
 
-angular.module('angular-c3', [])
+angular.module('ngC3', [])
 
   .directive('c3Chart', [function() {
 
@@ -22,91 +22,38 @@ angular.module('angular-c3', [])
         options: '=',
         axis: '='
       },
-      template: '<div class="chart" style="height: 300px;"></div>',
+      template: '<div id="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //available option to show gridlines for chart
-        console.log(element);
-        if(attrs.grid === 'true') {
-          scope.grid = {
-            x: { show: true },
-            y: { show: true}
-          };
-        }
-        //option to view subchart
-        if(attrs.subchart === 'true') {
-          scope.subchart = {
-            show: true
-          };
-        }
-        //option to zoom in on chart
-        if(attrs.zoom === 'true') {
-          scope.zoom = { zoom: { enabled: true } };
-        }
-        //ability to change the color pattern
-        if(attrs.pattern) {
-          scope.color = {};
-          scope.color.pattern = patterns[attrs.pattern];
-        } else {
-          scope.color = {};
-          scope.color.pattern = patterns.dark ;
-        }
-        var chartId;
-        //if an id is given use that, if not assign it one
-        if(element.attr('id')) {
-          chartId = element.attr('id');
-        }
-        else {
-          chartId = 'c3-chart-' + chartIdCounter;
-          element.attr('id', chartId);
-          chartIdCounter += 1;
-        }
-        //click function not utilized currently
-        // scope.data.onclick = function(d, elem) {
-        //   console.log(elem.style.fill, ' elem');
-        //   elem.style.fill = '#ce93d8';
-        //   console.log(d, ' d');
-        // };
+        console.log(scope.data);
         //generate c3 chart data
-        var chartData = {
-          bindto: '#' + element.attr('id'),
-          data: scope.data,
-          axis: scope.axis,
-          options: scope.options,
-          grid: scope.grid,
-          subchart: scope.subchart,
-          zoom: scope.zoom,
-          color: scope.color
-        };
+        var chartData = {};
+        chartData.data = scope.data;
+        chartData.bindto = '#chart';
         //assign a type of line if undefined
-        chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
+        // chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
 
-        //if scope.options are given replace the data with the options data
-        if(scope.options) {
-          Object.keys(scope.options).forEach(function(key) {
-            chartData[key] = scope.options[key];
-          });
-        }
-        //Reload the chart if the data changes
-        scope.$watch('data', function(data, prevData) {
-          if(chart) {
-            chart.load(data);
-            if(data.columns.length < prevData.columns.length) {
-              chart.unload(['data' + prevData.columns.length]);
-            }
-          }
-        });
-        //ran if there are changes to the chart
-        var onChartChanged = function(chart) {
-          if(chart) {
-            scope.data.type = chart;
-            chart.load(data);
-          }
-        };
-        //watch the chart for any changes
-        scope.$watch(function() {
-          return attrs.chart;
-        }, onChartChanged);
+        // //Reload the chart if the data changes
+        // scope.$watch('data', function(data, prevData) {
+        //   if(chart) {
+        //     chart.load(data);
+        //     if(data.columns.length < prevData.columns.length) {
+        //       chart.unload(['data' + prevData.columns.length]);
+        //     }
+        //   }
+        // });
+        // //ran if there are changes to the chart
+        // var onChartChanged = function(chart) {
+        //   if(chart) {
+        //     scope.data.type = chart;
+        //     chart.load(data);
+        //   }
+        // };
+        // //watch the chart for any changes
+        // scope.$watch(function() {
+        //   return attrs.chart;
+        // }, onChartChanged);
 
         //Generating the chart
         var chart = c3.generate(chartData);
