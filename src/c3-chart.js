@@ -18,19 +18,18 @@ angular.module('ngC3', [])
     return {
       restrict: 'EA',
       scope: {
-        data: '=',
-        options: '=',
-        axis: '='
+        config: '='
+        // grid: '=',
+        // axis: '='
       },
       template: '<div id="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //available option to show gridlines for chart
-        console.log(scope.data);
         //generate c3 chart data
-        var chartData = {};
-        chartData.data = scope.data;
+        var chartData = scope.config;
         chartData.bindto = '#chart';
+        console.log(chartData);
         //assign a type of line if undefined
         // chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
 
