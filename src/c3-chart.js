@@ -6,9 +6,10 @@ angular.module('ngC3', [])
     var chart = {};
     var allCharts = {};
     var decorateChart = function(chart) {
-      chart.on = function( what, then) {
+      console.log(chart.internal);
+      chart.on = function( what, then ) {
         // chart[what](then);
-      }
+      };
     };
 
     chart.get = function(id) {
@@ -35,7 +36,7 @@ angular.module('ngC3', [])
     var chartIdCounter = Math.floor((Math.random()*1000)+1);
 
     return {
-      restrict: 'EA',
+      restrict: 'EAC',
       scope: {
         config: '='
         // grid: '=',
@@ -74,11 +75,9 @@ angular.module('ngC3', [])
         // }, onChartChanged);
 
         //Generating the chart
-
         var chart = c3.generate(chartData);
         c3Factory.register('#chart', chart);
         console.log(c3Factory.get('#chart'));
-
       }
     };
   }]);
