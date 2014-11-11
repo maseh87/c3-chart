@@ -9,7 +9,7 @@ angular.module('ngC3', [])
     var decorateChart = function(chart) {
       console.log(chart.internal);
       chart.on = function( what, then ) {
-        // chart[what](then);
+        chart.internal.config[what](then);
       };
     };
 

@@ -36,12 +36,19 @@
             y: {
                 lines: [{value: 0}]
             }
+          },
+          zoom: {
+            enabled: true
           }
         };
 
-        c3Factory.get('chart').then(function(data) {
-          console.log(data, 'charts');
+        c3Factory.get('chart').then(function(chart) {
+          chart.on('onmouseover', function() {
+            console.log('this shit works!');
+          });
         });
+
+
 
       });
 
