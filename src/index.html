@@ -11,12 +11,13 @@
   <script src="c3-chart.js"></script>
 
   <div ng-controller="DemoController">
-    <c3-chart config="config" pattern="material"></c3-chart>
+    <c3-chart id="chart" config="config" pattern="material"></c3-chart>
+    <button ng-click="show()">Show</button>
   </div>
 
   <script type="text/javascript">
     angular.module('demo', ['ngC3'])
-      .controller('DemoController', function($scope) {
+      .controller('DemoController', function($scope, c3Factory) {
 
         $scope.config = {
           data: {
@@ -38,8 +39,9 @@
           }
         };
 
-
-
+        c3Factory.get('chart').then(function(data) {
+          console.log(data, 'charts');
+        });
 
       });
 

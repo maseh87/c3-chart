@@ -2,7 +2,8 @@
   'use strict';
 
 angular.module('ngC3', [])
-  .factory('c3Factory', function() {
+  .factory('c3Factory', function($q, $timeout) {
+    var defer = $q.defer();
     var chart = {};
     var allCharts = {};
     var decorateChart = function(chart) {
@@ -13,7 +14,11 @@ angular.module('ngC3', [])
     };
 
     chart.get = function(id) {
-      return allCharts[id];
+      $timeout(function() {
+        defer.resolve(allCharts[id]);
+      }, 300);
+
+      return defer.promise;
     };
 
     chart.register = function(id, chart) {
@@ -32,15 +37,12 @@ angular.module('ngC3', [])
       material: ['#e51c23', '#673ab7', '#5677fc', '#03a9f4', '#00bcd4', '#259b24', '#ffeb3b', '#ff9800']
     };
 
-    //random number to attach to the chart id
-    var chartIdCounter = Math.floor((Math.random()*1000)+1);
-
     return {
       restrict: 'EAC',
       scope: {
         config: '='
       },
-      template: '<div id="chart" style="height: 300px;"></div>',
+      template: '<div></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //available option to show gridlines for chart
@@ -49,11 +51,11 @@ angular.module('ngC3', [])
 
         //generate c3 chart data
         var chartData = scope.config;
-        chartData.bindto = '#chart';
+        chartData.bindto = '#' + attrs.id;
 
         //Generating the chart
         var chart = c3.generate(chartData);
-        c3Factory.register('#chart', chart);
+        c3Factory.register(attrs.id, chart);
       }
     };
   }]);
