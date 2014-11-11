@@ -12,7 +12,7 @@
 
   <div ng-controller="DemoController">
     <c3-chart id="chart" config="config" pattern="material"></c3-chart>
-    <button ng-click="show()">Show</button>
+    <c3-chart id="chart2" config="config" pattern="material"></c3-chart>
   </div>
 
   <script type="text/javascript">
@@ -42,19 +42,36 @@
         c3Factory.get('chart').then(function(chart) {
           $timeout(function() {
             chart.transform('pie');
-          }, 1000);
+          }, 1500);
           $timeout(function() {
             chart.transform('line');
+          }, 2500);
+          $timeout(function() {
+            chart.transform('pie');
+          }, 3500);
+          $timeout(function() {
+            chart.transform('area');
+          }, 4500);
+        });
+
+        c3Factory.get('chart2').then(function(chart) {
+          $timeout(function() {
+            chart.transform('area');
+          }, 1000);
+          $timeout(function() {
+            chart.transform('bar');
           }, 2000);
           $timeout(function() {
             chart.transform('pie');
           }, 3000);
           $timeout(function() {
-            chart.transform('area');
+            chart.transform('line');
           }, 4000);
         });
 
-
+        c3Factory.getAll().then(function(charts) {
+          console.log(charts, 'all my charts!');
+        });
 
       });
 

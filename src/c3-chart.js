@@ -19,6 +19,12 @@ angular.module('ngC3', [])
       });
     };
 
+    chart.getAll = function() {
+      return $timeout(function() {
+        return allCharts;
+      }, 100);
+    };
+
     chart.register = function(id, chart) {
       decorateChart(chart);
       allCharts[id] = chart;
