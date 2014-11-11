@@ -7,18 +7,16 @@ angular.module('ngC3', [])
     var chart = {};
     var allCharts = {};
     var decorateChart = function(chart) {
-      console.log(chart.internal);
-      chart.on = function( what, then ) {
-        chart.internal.config[what](then);
-      };
     };
 
     chart.get = function(id) {
-      $timeout(function() {
-        defer.resolve(allCharts[id]);
-      }, 300);
-
-      return defer.promise;
+      var chart;
+      return $timeout(function() {
+        //time out to wait for the chart to be compiled
+      }, 100).then(function() {
+        chart = allCharts[id];
+        return chart;
+      });
     };
 
     chart.register = function(id, chart) {
