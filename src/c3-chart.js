@@ -39,45 +39,21 @@ angular.module('ngC3', [])
       restrict: 'EAC',
       scope: {
         config: '='
-        // grid: '=',
-        // axis: '='
       },
       template: '<div id="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //available option to show gridlines for chart
+        //assign a type of line if undefined
+        if(!scope.config.type) scope.config.type = 'line';
+
         //generate c3 chart data
         var chartData = scope.config;
         chartData.bindto = '#chart';
-        console.log(chartData);
-        //assign a type of line if undefined
-        // chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
-
-        // //Reload the chart if the data changes
-        // scope.$watch('data', function(data, prevData) {
-        //   if(chart) {
-        //     chart.load(data);
-        //     if(data.columns.length < prevData.columns.length) {
-        //       chart.unload(['data' + prevData.columns.length]);
-        //     }
-        //   }
-        // });
-        // //ran if there are changes to the chart
-        // var onChartChanged = function(chart) {
-        //   if(chart) {
-        //     scope.data.type = chart;
-        //     chart.load(data);
-        //   }
-        // };
-        // //watch the chart for any changes
-        // scope.$watch(function() {
-        //   return attrs.chart;
-        // }, onChartChanged);
 
         //Generating the chart
         var chart = c3.generate(chartData);
         c3Factory.register('#chart', chart);
-        console.log(c3Factory.get('#chart'));
       }
     };
   }]);
