@@ -12,13 +12,14 @@ angular-c3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 1. The best way to install angular-c3 is to use bower
     + ```bower install angular-c3 --save```
 2. Or, from this repo
-  + you'll need the main file in ```dist/c3-chart.js```
+  + you'll need the main files in ```dist/```
 
 ## Using
++ angular-c3 comes pre-packaged with c3 and d3. No need to download those libraries.
 + Adding a C3 chart is as simple as adding the c3-chart directive to your HTML. Also add the data attribute to point to the data inside your controller.
 
 ```html
-<c3-chart data="data"></c3-chart>
+<c3-chart config="data"></c3-chart>
 ```
 
 ```javascript
