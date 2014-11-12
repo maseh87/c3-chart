@@ -19,17 +19,30 @@ angular-c3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 + Adding a C3 chart is as simple as adding the c3-chart directive to your HTML. Add an id to tell the chart which element to bindto. Also add the config attribute to point to the data inside your controller.
 
 ```html
-<c3-chart id="chart" config="data"></c3-chart>
+<c3-chart id="chart" config="config"></c3-chart>
 ```
 
 ```javascript
 angular.module('chartApp', ['angular-c3'])
 .controller('ChartController', function($scope){
-  $scope.data = {
-    columns : [
-      ['data1', 30, 200, 100, 400, 150, 250],
-      ['data2', 50, 20, 10, 40, 15, 25]
-    ]
+  $scope.config = {
+    data: {
+      x: 'x',
+      columns: [
+          ['x', '2012-12-29', '2012-12-30', '2012-12-31'],
+          ['data1', 230, 300, 330],
+          ['data2', 190, 230, 200],
+          ['data3', 90, 130, 180],
+      ]
+    },
+    axis: {
+        x: {
+            type: 'timeseries',
+            tick: {
+                format: '%m/%d',
+            }
+        }
+    }
   };
 });
 ```
