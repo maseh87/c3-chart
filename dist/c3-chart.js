@@ -15354,7 +15354,7 @@
   'use strict';
 
 angular.module('ngC3', [])
-  .factory('c3Factory', function($q, $timeout) {
+  .factory('c3Factory', ['$q', '$timeout', function($q, $timeout) {
     var defer = $q.defer();
     var chart = {};
     var allCharts = {};
@@ -15383,7 +15383,7 @@ angular.module('ngC3', [])
     };
 
     return chart;
-  })
+  }])
   .directive('c3Chart', ['c3Factory', function(c3Factory) {
 
     //color patterns for chart coloring
