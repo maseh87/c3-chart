@@ -1,7 +1,7 @@
 ;(function(c3){
   'use strict';
 
-angular.module('ngC3', [])
+angular.module('angular-c3', [])
   .factory('c3Factory', ['$q', '$timeout', function($q, $timeout) {
     var defer = $q.defer();
     var chart = {};
