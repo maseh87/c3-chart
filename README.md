@@ -16,10 +16,10 @@ angular-c3    [![Build Status](https://travis-ci.org/maseh87/c3-chart.svg?branch
 
 ## Using
 + angular-c3 comes pre-packaged with c3 and d3. No need to download those libraries.
-+ Adding a C3 chart is as simple as adding the c3-chart directive to your HTML. Also add the data attribute to point to the data inside your controller.
++ Adding a C3 chart is as simple as adding the c3-chart directive to your HTML. Add an id to tell the chart which element to bindto. Also add the config attribute to point to the data inside your controller.
 
 ```html
-<c3-chart config="data"></c3-chart>
+<c3-chart id="chart" config="data"></c3-chart>
 ```
 
 ```javascript
@@ -32,6 +32,21 @@ angular.module('chartApp', ['angular-c3'])
     ]
   };
 });
+```
+
++ To gain access to the chart object inject the c3Factory into the service you need it. Use the .get method to select which chart to select or use the .getAll method to gain access to all c3-charts.
+
+```javascript
+.controller('ChartController', function($scope, c3Factory) {
+  c3Factory.get('chart').then(function(chart) {
+    chart.load({
+        columns: [
+            ['data1', 30, 200, 100, 400, 150, 250, 50, 100, 250]
+            ['data2', 50, 25, 133, 46, 693, 345, 34, 14, 55]
+        ]
+    });
+  });
+})
 ```
 
 ##Contributing
