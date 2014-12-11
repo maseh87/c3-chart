@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     $    = require('gulp-load-plugins')();
+    
 
 var paths = {
   scripts: ['src/lib/d3/d3.js', 'src/lib/c3/c3.js', 'src/c3-chart.js']
