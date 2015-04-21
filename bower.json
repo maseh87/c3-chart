@@ -1,6 +1,9 @@
 {
   "name": "angular-c3",
-  "main": "dist/c3-chart.js",
+  "main": [
+    "dist/c3-chart.js",
+    "dist/c3-chart.css"
+  ],
   "version": "0.0.7",
   "homepage": "https://github.com/maseh87/c3-chart",
   "authors": [
