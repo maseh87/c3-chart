@@ -32,7 +32,7 @@ angular.module('angular-c3', [])
 
     return chart;
   }])
-  .directive('c3Chart', ['c3Factory', function(c3Factory) {
+  .directive('c3Chart', ['c3Factory', '$timeout', function(c3Factory, $timeout) {
 
     //color patterns for chart coloring
     var patterns = {
@@ -58,8 +58,10 @@ angular.module('angular-c3', [])
         chartData.bindto = '#' + attrs.id;
 
         //Generating the chart
-        var chart = c3.generate(chartData);
-        c3Factory.register(attrs.id, chart);
+        $timeout(function() {
+          var chart = c3.generate(chartData);
+          c3Factory.register(attrs.id, chart);
+        }, 100);
       }
     };
   }]);
