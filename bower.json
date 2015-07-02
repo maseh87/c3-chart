@@ -29,8 +29,8 @@
   "dependencies": {},
   "devDependencies": {
     "angular-mocks": "~1.2.24",
-    "d3": "~3.4.11",
-    "c3": "~0.3.0",
+    "d3": "<=3.5.0",
+    "c3": "~0.4.10",
     "angular": "~1.2.24"
   }
 }
